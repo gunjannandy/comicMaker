@@ -21,6 +21,6 @@ def makePdf(chapter):
 			f.write(img2pdf.convert([i for i in imagelist]))
 		print("    "+filename+" saved!")
 	except:
-		raise
-		#print("    Error while creating"+filename+"!")
-		#os.remove(filename)
+		#raise
+		print("    Error while creating"+filename+"!")
+		os.remove(filename)
