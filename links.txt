@@ -1,0 +1,12 @@
+# the lines defined with # will be discarded
+
+#https://mangalike.net/manga/pulse/chapter-1/
+#https://mangalike.net/manga/chromosome-47/chapter-1/
+#https://mangalike.net/manga/the-third-party/chapter-1/
+#https://mangalike.net/manga/two-lives-in-the-same-house/chapter-1/
+#https://mangalike.net/manga/what-does-the-fox-say/chapter-1/
+#https://mangalike.net/manga/apotheosis/chapter-55/
+#https://mangalike.net/manga/chong-sheng-resurrection/chapter-1/
+#https://mangalike.net/manga/the-lost-city/chapter-1/
+
+https://mangalike.net/manga/the-love-doctor/chapter-1/
