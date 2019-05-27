@@ -1,8 +1,8 @@
 # comicMaker
 ## Download any comic from https://www.mangalike.net
 
-**TL;DR**
-Set download links in "links.txt" file. And run "comicmaker.py".
+###### TL;DR
+Set comic book names in "config.json" file. And run "comicMaker.py".
 
 ## Performance:
 
@@ -10,26 +10,56 @@ Set download links in "links.txt" file. And run "comicmaker.py".
 
 ## Usage:
 
-Find the file "link.txt" .Inside there you can enter links of any books you want to download. "#" is used for commenting out the URLs you don't want to download, or already downloaded. Here is an example:
+Find the file "config.json". Inside there you can enter names of any books you want to download. And specify from which chapter you want to download. Here is an example:
 
-> https://www.mangalike.net/manga/chromosome-47/chapter-9
+```
+{
+    "chromosome-47" : "1",
+    "haomen-tianjia-qianqi" : "35",
+    "pulse" : "63"
+}
+```
+This will download 3 books:
+- chromosome-47 , where downloads starts from chapter 1.
+- haomen-tianjia-qianqi , where download starts from chapter 35.
+- pulse , where download starts from chapter 63.
 
-As long as the book name is inside the link, you are safe to proceed.
+> Don't forget to put ',' between two books.
 
-> https://www.mangalike.net/manga/chromosome-47
+How to find the book name: Go to the required book website and see the URL. Find the book name, usually just after the http://mangalike.net/manga/ part. If you want to download from start put "1" in the chapter part in the "config.json" file.
 
-This is also a valid link!
+After entering the valid books in the file "config.json", 
+press SHIFT+RIGHT-MOUSE-BUTTON to open up termnial.
+First run the following command:
 
-> #https://www.mangalike.net/manga/chromosome-47
+> pip install -r requirements.txt
 
-This link will be ignored while downloading.
-
-After entering the valid links in the file "links.txt",
-Open terminal and run the following command:
+This will download all required modules the program requires.
+Then enter the following command:
 
 > python comicMaker.py
 
 The program will automatically detect the books you want to download. It will check for your CPU core count, and run accordingly, with **multiprocessing** for burst speed.
+
+Comics will be saved on the same directory you clone this repository. Here is how: 
+```
+--SomeDirectory (Where you cloned the repository)
+  |--comicMaker
+  |  |--comicMaker
+  |  |  |--__init__.py
+  |  |  |--(and some necessary modules the program needs)
+  |  |--requirements.txt
+  |  |--.gitignore
+  |  |--_config.yml
+  |  |--comicMaker.py
+  |  |--config.json
+  |  |--readme.md
+  |--comicDownloads
+  |  |--chromosome-47
+  |  |--haomen-tianjia-qianqi
+  |  |--pulse 
+
+```
 
 ## Features:
 
@@ -50,8 +80,8 @@ The program will automatically detect the books you want to download. It will ch
 
 ## To-Do:
 
-Create a module that starts downloading from desired chapters like (download from chapter 21). Right now it downloads from first to last.
+Open for suggestions!
 
 ## Bugs:
 
-If internet gets disconnected while saving image, the images are saved partially(and the program doesn't download that image again, as it still can't detect if the image is saved partially or not), and this raises an error while making the pdfs.
+You tell!

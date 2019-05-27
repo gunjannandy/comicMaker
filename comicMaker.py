@@ -1,42 +1,50 @@
 import comicMaker
-import requests,os,os.path,sys
+import requests,os,os.path,sys,time
 from bs4 import BeautifulSoup
+import json
 
-sys.setrecursionlimit(10000)
+sys.setrecursionlimit(25000)
 
 def main():
 	try:
-	    with open("links.txt", "r", encoding="utf-8") as f:
-	        library = []
-	        print("List of books >")
-	        for line in f:
-	            if (line[0:1]=='#' or line[0:1]=='\n'):
-	                continue
-	            list_of_words = line.split('/')
-	            book=(list_of_words[list_of_words.index("mangalike.net") + 2])
-	            print("    > "+book)
-	            library.append(book)
-	        if not library:
-	            print("No books found!")
-	            return
+		with open('config.json', 'r', encoding="utf-8") as f:
+			books = json.load(f)
+		library=[*books]
+		if not library:
+			print("No books found!")
+			return
+		print("List of books >")
+		for i in library:
+			print (" > '"+i+"' download will start from Chapter-"+books[i])
 	except:
-	    print("No 'links.txt' file found!")
+		#raise
+	    print("No 'config.json' file found!")
 	    return
 	
 	if not comicMaker.confirm():
 		return
+	originDirectory=os.getcwd()
 	os.chdir('..')
 	os.chdir('comicDownloads\\')
 	for comicName in library:
 		incompleteUrl="https://mangalike.net/manga/"+comicName+"/"
+		try:
+			page_response = requests.get(incompleteUrl, timeout=5)
+			soup = BeautifulSoup(page_response.content, "html.parser")
+		except:
+			print("Could not connect, trying again in 5 seconds!")
+			time.sleep(5)
+			os.chdir('..')
+			os.chdir('comicMaker\\')
+			main()
 
-		page_response = requests.get(incompleteUrl, timeout=5)
-		soup = BeautifulSoup(page_response.content, "html.parser")
 		chapterNum=[]
 		for li in soup.findAll('li', attrs={'class':'wp-manga-chapter'}):
 			string=li.find('a').contents[0]
 			list_of_words = string.split( )
-			chapterNum.append(list_of_words[list_of_words.index("Chapter") + 1])
+			validChapterNum = list_of_words[list_of_words.index("Chapter") + 1]
+			if float(validChapterNum) >= float(books[comicName]):
+				chapterNum.append(validChapterNum)
 		chapterNum.reverse()
 		parentDir=comicName+"/"
 		if os.path.exists(parentDir):
@@ -47,9 +55,9 @@ def main():
 		os.chdir(parentDir)
 
 		for i in chapterNum:
-			# use the below lines to start execution to a selected chapter
-			#if comicName=="girl-and-science" and (float(i)<23):
-			#	continue
+			books[comicName] = str(i)
+			with open(originDirectory+'\\config.json', 'w', encoding="utf-8") as file:
+				json.dump(books, file, indent=4)
 			chapter="Chapter-"+i.replace('.','-')
 			currentDir=chapter+"/"
 			if os.path.exists(currentDir):

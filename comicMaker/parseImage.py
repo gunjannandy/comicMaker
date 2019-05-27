@@ -17,18 +17,5 @@ def parseImage(url,chapter):
 		links=[]
 		for div in data:
 		 	links.append(div.findAll('img'))
-		 	# for img in links:
-		 	# 	link = img['src']
-		 	# 	pageNum = img['id'].replace('ima','pa')
-		 	# 	saveImage(link,chapter,pageNum)
 		with Pool(processes=(2*mp.cpu_count())-1) as pool:
 			pool.starmap(job, zip(links, itertools.repeat(chapter)))
-		#pool=Pool(processes=5)
-		#inputs = range(100)
-		#bar = Bar('Processing', max=len(inputs))
-		#pool.starmap(job, zip(links, itertools.repeat(chapter)))
-		#for i in pool.starmap(job, zip(links, itertools.repeat(chapter))):
-		#	bar.next()
-		#bar.finish()
-	 		
-
