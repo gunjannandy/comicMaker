@@ -48,7 +48,7 @@ def main():
 
 		for i in chapterNum:
 			# use the below lines to start execution to a selected chapter
-			#if comicName=="chromosome47" and (float(i)<20):
+			#if comicName=="girl-and-science" and (float(i)<23):
 			#	continue
 			chapter="Chapter-"+i.replace('.','-')
 			currentDir=chapter+"/"

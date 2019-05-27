@@ -8,5 +8,8 @@
 #https://mangalike.net/manga/apotheosis/chapter-55/
 #https://mangalike.net/manga/chong-sheng-resurrection/chapter-1/
 #https://mangalike.net/manga/the-lost-city/chapter-1/
+#https://mangalike.net/manga/the-love-doctor/chapter-1/
 
-https://mangalike.net/manga/the-love-doctor/chapter-1/
+#https://mangalike.net/manga/star-martial-god-technique/chapter-19/
+#https://mangalike.net/manga/citrus-saburo-uta/chapter-32/
+#https://mangalike.net/manga/girl-and-science/chapter-38/

@@ -4,6 +4,10 @@
 **TL;DR**
 Set download links in "links.txt" file. And run "comicmaker.py".
 
+## Performance:
+
+**4 chapters/minute on 4 core CPU and 1MBPS internet connection.**
+
 ## Usage:
 
 Find the file "link.txt" .Inside there you can enter links of any books you want to download. "#" is used for commenting out the URLs you don't want to download, or already downloaded. Here is an example:
