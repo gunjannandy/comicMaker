@@ -8,5 +8,5 @@ def imageConverter(filename):
 			rgb_im = im.convert('RGB')
 			rgb_im.save(filename)
 		except:
-			#pass
-			raise
+			pass
+			#raise
