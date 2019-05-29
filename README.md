@@ -24,9 +24,9 @@ Find the file `config.json`. Inside there you can enter names of any books you w
 
 
 - This will download 3 books:
-  + chromosome-47 , where downloads starts from chapter 1.
-  + haomen-tianjia-qianqi , where download starts from chapter 35.
-  + pulse , where download starts from chapter 63.
++ chromosome-47 , where downloads starts from chapter 1.
++ haomen-tianjia-qianqi , where download starts from chapter 35.
++ pulse , where download starts from chapter 63.
 ```
 ```diff
 - Don't forget to put ',' between two books.
