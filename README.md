@@ -22,13 +22,11 @@ Find the file `config.json`. Inside there you can enter names of any books you w
     "pulse" : "63"
 }  
 
-  
-    
-      
+
 - This will download 3 books:
-    + chromosome-47 , where downloads starts from chapter 1.
-    + haomen-tianjia-qianqi , where download starts from chapter 35.
-    + pulse , where download starts from chapter 63.
+  + chromosome-47 , where downloads starts from chapter 1.
+  + haomen-tianjia-qianqi , where download starts from chapter 35.
+  + pulse , where download starts from chapter 63.
 ```
 ```diff
 - Don't forget to put ',' between two books.
@@ -107,15 +105,15 @@ Comics will be saved on the same directory you clone this repository. Here is ho
 
 ### Short term :  
 
-- Download only selected chapters from each book (config.json file should take that data)
+- Download only selected chapters from each book (`config.json` file should take that data)
 - Optimize downloading process for taking less resources.
 - Right now it can only download books which are divided only in chapters, not volumes. It should also be able to download if the book contains "Volumes".
 
 ### Long term :  
 
 - Add more websites to download from.
-- Add command line arguments for wase of use.
-- Add documentation of how the code snippet works.
+- Add command line arguments for ease of use.
+- Add documentation of how each code snippet works.
 
 ## Bugs:
 
