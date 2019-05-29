@@ -62,10 +62,10 @@ The program will automatically detect the books you want to download. It will ch
 ### Save Location :
 
 Comics will be saved on the same directory you clone this repository. Here is how: 
-```
-+     --SomeDirectory (Where you cloned the repository)
+```diff
+-     --SomeDirectory (Where you cloned the repository)
         |--comicMaker
-+       |  |--comicMaker
+-       |  |--comicMaker
         |  |  |--__init__.py
         |  |  |--(and some necessary modules the program needs)
         |  |--requirements.txt
@@ -74,7 +74,7 @@ Comics will be saved on the same directory you clone this repository. Here is ho
         |  |--comicMaker.py
         |  |--config.json
         |  |--readme.md
-+       |--comicDownloads
+-       |--comicDownloads
         |  |--chromosome-47
         |  |--haomen-tianjia-qianqi
         |  |--pulse 
