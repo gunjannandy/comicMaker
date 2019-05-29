@@ -38,7 +38,7 @@ Go to the required book website and see the URL. Find the book name, usually jus
 
 ### Step 2 : 
 
-After entering the valid books in the file `config.json`, press `SHIF+RIGHT-MOUSE-BUTTON` to open up termnial.  
+After entering the valid books in the file `config.json`, press `SHIFT`**+**`RIGHT-MOUSE-BUTTON` to open up termnial.  
 First run the following command:
 
 ```
@@ -63,21 +63,21 @@ The program will automatically detect the books you want to download. It will ch
 
 Comics will be saved on the same directory you clone this repository. Here is how: 
 ```
- --SomeDirectory (Where you cloned the repository)
-  |--comicMaker
-  |  |--comicMaker
-  |  |  |--__init__.py
-  |  |  |--(and some necessary modules the program needs)
-  |  |--requirements.txt
-  |  |--.gitignore
-  |  |--_config.yml
-  |  |--comicMaker.py
-  |  |--config.json
-  |  |--readme.md
-  |--comicDownloads
-  |  |--chromosome-47
-  |  |--haomen-tianjia-qianqi
-  |  |--pulse 
++     --SomeDirectory (Where you cloned the repository)
+        |--comicMaker
++       |  |--comicMaker
+        |  |  |--__init__.py
+        |  |  |--(and some necessary modules the program needs)
+        |  |--requirements.txt
+        |  |--.gitignore
+        |  |--_config.yml
+        |  |--comicMaker.py
+        |  |--config.json
+        |  |--readme.md
++       |--comicDownloads
+        |  |--chromosome-47
+        |  |--haomen-tianjia-qianqi
+        |  |--pulse 
 
 ```
 
