@@ -15,15 +15,16 @@ Set comic book names in `config.json` file. And run `comicMaker.py`.
 ### Step 1 :  
 Find the file `config.json`. Inside there you can enter names of any books you want to download. And specify from which chapter you want to download. Here is an example:
 
-```json
+```diff
 {
     "chromosome-47" : "1",
     "haomen-tianjia-qianqi" : "35",
     "pulse" : "63"
-}
-```
+}  
 
-```diff
+  
+    
+      
 - This will download 3 books:
     + chromosome-47 , where downloads starts from chapter 1.
     + haomen-tianjia-qianqi , where download starts from chapter 35.
@@ -39,10 +40,12 @@ Go to the required book website and see the URL. Find the book name, usually jus
 
 ### Step 2 : 
 
-After entering the valid books in the file `config.json`, press `SHIFT`+`RIGHT-MOUSE-BUTTON` to open up termnial.  
+After entering the valid books in the file `config.json`, press `SHIF+RIGHT-MOUSE-BUTTON` to open up termnial.  
 First run the following command:
 
-![pip install -r requirements.txt](https://placehold.it/15/1589F0/000000?text=+) `pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
 
 This will download all required modules the program requires.  
 
@@ -50,7 +53,9 @@ This will download all required modules the program requires.
 
 Then enter the following command:
 
-![python comicMaker.py](https://placehold.it/15/1589F0/000000?text=+) `python comicMaker.py`
+```
+python comicMaker.py
+```
 
 ### Trick :
 
@@ -98,9 +103,19 @@ Comics will be saved on the same directory you clone this repository. Here is ho
 - Here comes **multiprocessing**. With this, number of processes at each iterations is increased to 2 times the core count of your computer's CPU.
 - It you have a `4 core CPU`, you can start downloading `8 files at once`.
 
-## To-Do:
+## Future plans:
 
-Open for suggestions!
+### Short term :  
+
+- Download only selected chapters from each book (config.json file should take that data)
+- Optimize downloading process for taking less resources.
+- Right now it can only download books which are divided only in chapters, not volumes. It should also be able to download if the book contains "Volumes".
+
+### Long term :  
+
+- Add more websites to download from.
+- Add command line arguments for wase of use.
+- Add documentation of how the code snippet works.
 
 ## Bugs:
 

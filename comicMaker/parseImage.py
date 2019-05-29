@@ -16,6 +16,15 @@ def parseImage(url,chapter):
 		data = soup.findAll('div',attrs={'class':"page-break"})
 		links=[]
 		for div in data:
-		 	links.append(div.findAll('img'))
-		with Pool(processes=(2*mp.cpu_count())-1) as pool:
+			links.append(div.findAll('img'))
+		linkCount = 2*mp.cpuCount() - 1
+		# linkCount=0
+		# for i in links:
+		# 	linkCount+=1
+		# if linkCount > 17:
+		# 	linkCount = 17
+		# elif linkCount < 4:
+		# 	linkCount = 4
+		# print("  Starting burst engine...")
+		with Pool(processes=linkCount) as pool:
 			pool.starmap(job, zip(links, itertools.repeat(chapter)))
