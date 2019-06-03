@@ -117,4 +117,8 @@ Comics will be saved on the same directory you clone this repository. Here is ho
 
 ## Bugs:
 
-You tell!
+- [Not fixed]  The pdf merging continues, even if the book is completely downloaded.
+- [Fixed]  ~~Image to pdf fails if images are not downloaded completely.~~
+- [Fixed]  ~~Can't convert RGBA images in pdf.~~
+- [Fixed]  ~~If connection fails, the total downloading fails.~~
+- [Fixed]  ~~Pdfs are merged out of order.~~
