@@ -8,7 +8,12 @@ Set comic book names in `config.json` file. And run `comicMaker.py`.
 
 ## Performance:
 
-**4 chapters/minute on 4 core CPU and 1MBPS internet connection.**
+**4 chapters/minute on 4 core CPU and 1MBPS internet connection.**  
+
+
+<p align="center">
+  <img src="docs/terminal.gif"  height="400">  
+</p>
 
 ## Usage:
 
