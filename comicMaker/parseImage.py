@@ -21,8 +21,8 @@ def parseImage(url,chapter):
 		linkCount=0
 		for i in links:
 			linkCount+=1
-		if linkCount > 60:
-			linkCount = 60
+		if linkCount > 90:
+			linkCount = 90
 		elif linkCount < 2*mp.cpu_count():
 			linkCount = 2*mp.cpu_count()
 		print("  Starting burst engine...")

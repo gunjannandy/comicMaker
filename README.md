@@ -100,7 +100,7 @@ Comics will be saved on the same directory you clone this repository. Here is ho
 - This Download iterates to over 2000 pages average for each book. (Approximately each chapter contains 15 pages, and there are over 150 chapters each book). So it will take ages to download every file at each iteration.
 - Here comes **multithreading**. With this, every files are downloaded simultaneously -
   - **Minimum :** It you have a `4 core CPU`, you can start downloading `8 files at once`.  ( In cases where the number of files is less than `2 x cpu-core-count` )
-  - **Maximum :** It can download maximum of `60 files at once`.
+  - **Maximum :** It can download maximum of `90 files at once`.
 
 ## Future plans:
 
@@ -118,7 +118,7 @@ Comics will be saved on the same directory you clone this repository. Here is ho
 
 ## Bugs:
 
-- [Not fixed]  (Non-Problamatic) The pdf merging continues, even if the book is completely downloaded.
+- [Fixed]  ~~(Non-Problamatic) The pdf merging continues, even if the book is completely downloaded.~~
 - [Fixed]  ~~(Problamatic) Image to pdf fails if images are not downloaded completely.~~
 - [Fixed]  ~~(Problamatic) Can't convert RGBA images in pdf.~~
 - [Fixed]  ~~(Problamatic) If connection fails, the total downloading fails.~~
