@@ -1,5 +1,5 @@
 # comicMaker  
-###  -- Download any comic from https://www.mangalike.net/ --  
+###  ~   Download any comic from https://www.mangalike.net/    ~
   
   
 
@@ -57,7 +57,7 @@ python comicMaker.py
 
 ### Trick :
 
-The program will automatically detect the books you want to download. It will check for your CPU core count, and run accordingly, with **multiprocessing** for burst speed.
+The program will automatically detect the books you want to download. It will check for your CPU core count, and run accordingly, with **multithreading** for burst speed.
 
 ### Save Location :
 
@@ -99,7 +99,7 @@ Comics will be saved on the same directory you clone this repository. Here is ho
 ### Why the program uses this much resources ?  
 - This Download iterates to over 2000 pages average for each book. (Approximately each chapter contains 15 pages, and there are over 150 chapters each book). So it will take ages to download every file at each iteration.
 - Here comes **multithreading**. With this, every files are downloaded simultaneously -
-  - **Minimum :** It you have a `4 core CPU`, you can start downloading `8 files at once`.(In cases where the number of files is less than `2 x cpu-core-count`)
+  - **Minimum :** It you have a `4 core CPU`, you can start downloading `8 files at once`.  ( In cases where the number of files is less than `2 x cpu-core-count` )
   - **Maximum :** It can download maximum of `60 files at once`.
 
 ## Future plans:
@@ -107,7 +107,7 @@ Comics will be saved on the same directory you clone this repository. Here is ho
 ### Short term :  
 
 - Download only selected chapters from each book (`config.json` file should take that data)
-- [Added]  ~~Optimize downloading process for taking less resources.~~
+- [Added]  Optimize downloading process for taking less resources.
 - Right now it can only download books which are divided only in chapters, not volumes. It should also be able to download if the book contains "Volumes".
 
 ### Long term :  
