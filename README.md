@@ -98,15 +98,16 @@ Comics will be saved on the same directory you clone this repository. Here is ho
 
 ### Why the program uses this much resources ?  
 - This Download iterates to over 2000 pages average for each book. (Approximately each chapter contains 15 pages, and there are over 150 chapters each book). So it will take ages to download every file at each iteration.
-- Here comes **multiprocessing**. With this, number of processes at each iterations is increased to 2 times the core count of your computer's CPU.
-- It you have a `4 core CPU`, you can start downloading `8 files at once`.
+- Here comes **multithreading**. With this, every files are downloaded simultaneously -
+  - **Minimum :** It you have a `4 core CPU`, you can start downloading `8 files at once`.(In cases where the number of files is less than `2 x cpu-core-count`)
+  - **Maximum :** It can download maximum of `60 files at once`.
 
 ## Future plans:
 
 ### Short term :  
 
 - Download only selected chapters from each book (`config.json` file should take that data)
-- Optimize downloading process for taking less resources.
+- [Added]  ~~Optimize downloading process for taking less resources.~~
 - Right now it can only download books which are divided only in chapters, not volumes. It should also be able to download if the book contains "Volumes".
 
 ### Long term :  
@@ -117,8 +118,8 @@ Comics will be saved on the same directory you clone this repository. Here is ho
 
 ## Bugs:
 
-- [Not fixed]  The pdf merging continues, even if the book is completely downloaded.
-- [Fixed]  ~~Image to pdf fails if images are not downloaded completely.~~
-- [Fixed]  ~~Can't convert RGBA images in pdf.~~
-- [Fixed]  ~~If connection fails, the total downloading fails.~~
-- [Fixed]  ~~Pdfs are merged out of order.~~
+- [Not fixed]  (Non-Problamatic) The pdf merging continues, even if the book is completely downloaded.
+- [Fixed]  ~~(Problamatic) Image to pdf fails if images are not downloaded completely.~~
+- [Fixed]  ~~(Problamatic) Can't convert RGBA images in pdf.~~
+- [Fixed]  ~~(Problamatic) If connection fails, the total downloading fails.~~
+- [Fixed]  ~~(Problamatic) Pdfs are merged out of order.~~
