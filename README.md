@@ -12,7 +12,7 @@ Set comic book names in `config.json` file. And run `comicMaker.py`.
 
 
 <p align="center">
-  <img src="docs/terminal.gif"  height="400">  
+  <img src="docs/terminal.gif"  width="500"> 
 </p>
 
 ## Usage:
