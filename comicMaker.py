@@ -25,7 +25,7 @@ def main():
 		return
 	originDirectory=os.getcwd()
 	os.chdir('..')
-	os.chdir('comicDownloads\\')
+	os.chdir('comicDownloads'+os.sep)
 	for comicName in library:
 		incompleteUrl="https://mangalike.net/manga/"+comicName+"/"
 		try:
@@ -35,7 +35,7 @@ def main():
 			print("Could not connect, trying again in 5 seconds!")
 			time.sleep(5)
 			os.chdir('..')
-			os.chdir('comicMaker\\')
+			os.chdir('comicMaker'+os.sep)
 			main()
 
 		chapterNum = []
@@ -58,7 +58,7 @@ def main():
 		if totalChaptersToDownload > 1 :
 			for i in chapterNum:
 				books[comicName] = str(i)
-				with open(originDirectory+'\\config.json', 'w', encoding="utf-8") as file:
+				with open(originDirectory+os.sep+'config.json', 'w', encoding="utf-8") as file:
 					json.dump(books, file, indent=4)
 				chapter="Chapter-"+i.replace('.','-')
 				currentDir=chapter+"/"
