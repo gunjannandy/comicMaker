@@ -1,5 +1,35 @@
 {
-    "what-does-the-fox-say": "95",
-    "tamen-de-gushi": "187",
-    "lily": "243"
+    "mangaLike": {
+        "what-does-the-fox-say": "95",
+        "lily": "243",
+        "tamen-de-gushi": "187",
+        "otome-no-teikoku": "108.5",
+        "sirens-lament": "151",
+        "serenade-keum-kyesoo": "75",
+        "sun-ken-rock": "171",
+        "haomen-tianjia-qianqi": "398",
+        "lily-love": "34",
+        "girl-and-science": "53",
+        "citrus-saburo-uta": "41.5",
+        "star-martial-god-technique": "253",
+        "the-love-doctor": "88",
+        "the-lost-city": "82",
+        "chong-sheng-resurrection": "186",
+        "apothesis": "173",
+        "two-lives-in-the-same-house": "24",
+        "the-third-party": "50",
+        "chromosome-47": "82",
+        "pulse": "67.5",
+        "addictive": "13",
+        "exciting-feelings": "68.5"
+    },
+    "readComic": {
+        "Civil-War-2006": "7",
+        "All-Star-Superman": "12",
+        "Injustice-2": "50",
+        "Batman-The-Dark-Knight-Returns": "1",
+        "Batman-The-Complete-Hush": "1",
+        "X-23-2018":"1",
+        "Phoenix-Resurrection-The-Return-of-Jean-Grey":"1"
+    }
 }

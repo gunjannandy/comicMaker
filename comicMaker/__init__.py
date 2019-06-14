@@ -2,6 +2,8 @@ from .imageConverter import imageConverter
 from .checkProgress import checkProgress
 from .makeFullPdf import makeFullPdf
 from .parseImage import parseImage
+from .mangaLike import mangaLike
+from .readComic import readComic
 from .saveImage import saveImage
 from .confirm import confirm
 from .makePdf import makePdf
