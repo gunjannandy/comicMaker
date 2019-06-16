@@ -1,4 +1,4 @@
 #ignoring pycache
 *pyc
 #ignoring config.json
-config.json
+# config.json
