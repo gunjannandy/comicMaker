@@ -24,8 +24,8 @@ def main():
 	    print("No 'config.json' file found!")
 	    return
 	
-	if not comicMaker.confirm():
-		return
+	# if not comicMaker.confirm():
+		# return
 
 	# Process(target = comicMaker.mangaLike).start()
 	# Process(target = comicMaker.readComic).start()
