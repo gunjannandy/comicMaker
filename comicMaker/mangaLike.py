@@ -19,8 +19,7 @@ def mangaLike():
 		for i in library:
 			print (" > '"+i+"' download will start from Chapter-"+books['mangaLike'][i])
 	except:
-		# raise
-	    print("No 'config.json' file found!")
+		# raise	    print("No 'config.json' file found!")
 	    return
 	
 	if not confirm():
@@ -39,6 +38,7 @@ def mangaLike():
 			os.chdir('..')
 			os.chdir('comicMaker'+os.sep)
 			mangaLike()
+			return
 
 		chapterNum = []
 		totalChaptersToDownload = 0
@@ -81,3 +81,4 @@ def mangaLike():
 		print(" << Download finished of "+comicName+" <")
 	print(" <<< All Downloads completed!")
 	os.chdir(originDirectory)
+	return

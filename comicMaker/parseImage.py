@@ -4,6 +4,8 @@ import multiprocessing as mp
 from multiprocessing.dummy import Pool
 from .job import job
 from .saveImage import saveImage
+from .checkInternet import checkInternet
+from .rotateProxy import rotateProxy
 
 class parseImage:
 
@@ -32,14 +34,26 @@ class parseImage:
 			with Pool(processes=linkCount) as pool:
 				pool.starmap(job.mangaLike, zip(links, itertools.repeat(chapter)))
 
-	def readComic(url,chapter):
+	def readComic(url,chapter,proxyList,proxyNumber):
 		try:
+			if not checkInternet():
+				print("Could not connect, trying again in 3 seconds!")
+				time.sleep(3)
+				parseImage.readComic(url,chapter,proxyList,proxyNumber)
+				return
+			# proxy=rotateProxy()
 			scraper = cfscrape.create_scraper()
-			nonstrcfurl = scraper.get(url).content
+			# requests.packages.urllib3.disable_warnings()
+			# nonstrcfurl = scraper.get(url,proxies={"http": proxyList[proxyNumber], "https": proxyList[proxyNumber]}, headers={'User-Agent': 'Chrome'}).content
+			print("    Trying with : "+proxyList[proxyNumber])
+			nonstrcfurl = scraper.get(url,proxies={"https": proxyList[proxyNumber]}, headers={'User-Agent': 'Chrome'}).content
+			# nonstrcfurl = scraper.get(url).content
 			cfurl = str(nonstrcfurl)
 		except:
-			print("Could not connect, Trying again!")
-			parseImage.readComic(url,chapter)
+			print("     Proxy went down..Changing proxy...")
+			proxyNumber=(proxyNumber+1)%len(proxyList)
+			print("    Trying with : "+proxyList[proxyNumber])
+			parseImage.readComic(url,chapter,proxyList,proxyNumber)
 			return
 		
 			# cfurl = str(nonstrcfurl)
@@ -54,21 +68,6 @@ class parseImage:
 				finalSplit=firstSplit.split("\")")[0]
 				links.append(finalSplit)
 				linkCount+=1
-
-			# if (threading < 0):
-			# 	print("  Bursting is not possible, starting iteration...")
-			# 	for i in range (1,linkCount+1):
-			# 		pageNum="%03d"%i
-			# 		saveImage.readComic(links[i-1],chapter,pageNum)
-			
-			# elif (threading > -1):
-			# 	if linkCount > 90:
-			# 		linkCount = 90
-			# 	elif linkCount < 2*mp.cpu_count():
-			# 		linkCount = 2*mp.cpu_count()
-			# 	print("  Starting burst engine...")
-			# 	with Pool(processes=linkCount) as pool:
-			# 		pool.starmap(job.readComic, zip(links, itertools.repeat(chapter)))
 			
 			for i in range (1,linkCount+1):
 				pageNum.append("%03d"%i)
