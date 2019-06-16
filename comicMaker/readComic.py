@@ -29,6 +29,8 @@ def readComic():
 
 	originalWorkingDirectory=os.getcwd()
 	os.chdir('..')
+	if not os.path.exists('comicDownloads'+os.sep):
+       os.makedirs('comicDownloads'+os.sep)
 	os.chdir('comicDownloads'+os.sep)
 	proxyNumber=0
 	proxyCount=0

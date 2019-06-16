@@ -29,6 +29,8 @@ def mangaLike():
 	# 	return
 	originDirectory=os.getcwd()
 	os.chdir('..')
+	if not os.path.exists('comicDownloads'+os.sep):
+       os.makedirs('comicDownloads'+os.sep)
 	os.chdir('comicDownloads'+os.sep)
 	for comicName in library:
 		incompleteUrl="https://mangalike.net/manga/"+comicName+"/"
