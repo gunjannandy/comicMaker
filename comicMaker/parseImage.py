@@ -1,4 +1,4 @@
-import os,requests,itertools,cfscrape
+import os,requests,itertools,cfscrape,time
 from bs4 import BeautifulSoup
 import multiprocessing as mp
 from multiprocessing.dummy import Pool
@@ -14,7 +14,8 @@ class parseImage:
 			page_response = requests.get(url, timeout=10)
 			soup = BeautifulSoup(page_response.content, "html.parser")
 		except:
-			print("Could not connect, Trying again!")
+			print("Could not connect, trying again in 5 seconds!")
+			time.sleep(5)
 			parseImage.mangaLike(url,chapter)
 			return
 		else:
@@ -37,8 +38,8 @@ class parseImage:
 	def readComic(url,chapter,proxyList,proxyNumber):
 		try:
 			if not checkInternet():
-				print("Could not connect, trying again in 3 seconds!")
-				time.sleep(3)
+				print("Could not connect, trying again in 5 seconds!")
+				time.sleep(5)
 				parseImage.readComic(url,chapter,proxyList,proxyNumber)
 				return
 			# proxy=rotateProxy()

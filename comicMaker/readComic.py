@@ -3,73 +3,75 @@ from .parseImage import parseImage
 from .rotateProxy import rotateProxy
 from .checkInternet import checkInternet
 from .makePdf import makePdf
-from .confirm import confirm
 import requests,os,os.path,sys,time,json,cfscrape
 from bs4 import BeautifulSoup
 
 def readComic():
-	try:
-		with open('config.json', 'r', encoding="utf-8") as f:
-			books = json.load(f)
-		library=[*books['readComic']]
-		if not library:
-			print("No books found!")
-			return
-		print("List of books >")
-		for i in library:
-			print (" > '"+i+"' download will start from Chapter-"+books['readComic'][i])
-	except:
-		raise
-	    # print("No 'config.json' file found!")
-	    # return
-	
-	if not confirm():
-		return
+	while True:
+		try:
+			with open('config.json', 'r', encoding="utf-8") as f:
+				books = json.load(f)
+			library=[*books['readComic']]
+			if not library:
+				# print("No books found!")
+				return
+			# print("List of books >")
+			# for i in library:
+			# 	print (" > '"+i+"' download will start from Chapter-"+books['readComic'][i])
+		except:
+			# raise
+		    # print("No 'config.json' file found!")
+		    # return
+		    continue
+		break
+	# if not confirm():
+	# 	return
 
 	originalWorkingDirectory=os.getcwd()
 	os.chdir('..')
 	os.chdir('comicDownloads'+os.sep)
 	proxyNumber=0
 	proxyCount=0
-	while proxyCount<1:
+	while proxyCount<5:
 		proxyList=rotateProxy.createProxyList("https://readcomiconline.to/Comic/")
 		# proxyList=rotateProxy.createProxyList("https://google.com/")
 		proxyCount=len(proxyList)
 	
 	for comicName in library:
 		incompleteUrl="https://readcomiconline.to/Comic/"+comicName+"/"
-		try:
-			if not checkInternet():
-				print("Could not connect, trying again in 3 seconds!")
-				time.sleep(3)
-				os.chdir(originalWorkingDirectory)
-				readComic()
-				return
-			
-			scraper = cfscrape.create_scraper()
-			# requests.packages.urllib3.disable_warnings()
-			# nonstrcfurl = scraper.get(incompleteUrl,proxies={"http": proxyList[proxyNumber], "https": proxyList[proxyNumber]},headers={'User-Agent': 'Chrome'}, timeout=20).content
-			print("    Trying with : "+proxyList[proxyNumber])
-			nonstrcfurl = scraper.get(incompleteUrl,proxies={"https": proxyList[proxyNumber]},headers={'User-Agent': 'Chrome'}, timeout=20).content
-			cfurl = str(nonstrcfurl)
+		tryAgain=0
+		while tryAgain == 0:
+			try:
+				if not checkInternet():
+					print("Could not connect, trying again in 3 seconds!")
+					time.sleep(3)
+					os.chdir(originalWorkingDirectory)
+					readComic()
+					return
+				
+				scraper = cfscrape.create_scraper()
+				# requests.packages.urllib3.disable_warnings()
+				# nonstrcfurl = scraper.get(incompleteUrl,proxies={"http": proxyList[proxyNumber], "https": proxyList[proxyNumber]},headers={'User-Agent': 'Chrome'}, timeout=20).content
+				print("    Trying with : "+proxyList[proxyNumber])
+				nonstrcfurl = scraper.get(incompleteUrl,proxies={"https": proxyList[proxyNumber]},headers={'User-Agent': 'Chrome'}, timeout=20).content
+				cfurl = str(nonstrcfurl)
 
-			# with open(originalWorkingDirectory+os.sep+"cfurl.txt","wb") as f:
-			# 	f.write(nonstrcfurl)
-			# print(cfurl)
-			# return
+				# with open(originalWorkingDirectory+os.sep+"cfurl.txt","wb") as f:
+				# 	f.write(nonstrcfurl)
+				# print(cfurl)
+				# return
 
-			# page_response = requests.get(incompleteUrl, timeout=5)
-			# soup = BeautifulSoup(page_response.content, "html.parser")
-		except:
-			# raise
-			print("     Proxy went down..trying again...")
-			os.chdir(originalWorkingDirectory)
-			readComic()
-			return
+			except:
+				# raise
+				print("     Proxy went down..trying again...")
+				continue
+				# os.chdir(originalWorkingDirectory)
+				# readComic()
+				# return
+			tryAgain=1 #for breaking the while loop
 		# for i in range(1,100): print(i)
 		chapterNames = []
 		middleLink = []
-		fullComicFlag=0 #some comics are not divided in chapters, they are complete collection
 		totalChaptersToDownload = 0
 		# print(cfurl)
 		# print(cfurl.count("href=\"/Comic/"+comicName+"/"))
@@ -124,8 +126,14 @@ def readComic():
 					books['readComic'][comicName] = str(i).split("-")[1]
 				except:
 					pass
-				with open(originalWorkingDirectory+os.sep+'config.json', 'w', encoding="utf-8") as file:
-					json.dump(books, file, indent=4)
+				tryAgain=0
+				while tryAgain==0:
+					try:
+						with open(originalWorkingDirectory+os.sep+'config.json', 'w', encoding="utf-8") as file:
+							json.dump(books, file, indent=4)
+					except:
+						continue
+					tryAgain=1
 				# chapter="Chapter-"+i.replace('.','-')
 				chapter = str(i)
 				currentDir=chapter+"/"
@@ -147,6 +155,5 @@ def readComic():
 			print(" < "+comicName+" already fully downloaded.")
 		os.chdir("..")
 		print(" << Download finished of "+comicName+" <")
-	print(" <<< All Downloads completed!")
 	os.chdir(originalWorkingDirectory)
 	return

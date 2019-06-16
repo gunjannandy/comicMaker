@@ -1,5 +1,5 @@
 from lxml.html import fromstring
-import requests,cfscrape,itertools
+import requests,cfscrape,itertools,time
 from multiprocessing.dummy import Pool
 from sys import stdout
 from bs4 import BeautifulSoup
@@ -10,9 +10,9 @@ class rotateProxy:
     def createProxyList(url):
         # proxyList=[]
         if not checkInternet():
-            print("Could not connect, trying again in 3 seconds!")
-            time.sleep(3)
-            createProxyList(url)
+            print("Could not connect, trying again in 5 seconds!")
+            time.sleep(5)
+            rotateProxy.createProxyList(url)
             return
         print("Finding Proxy Lists...Please wait...")
         linkThatHostsFreeProxies = 'https://free-proxy-list.net/anonymous-proxy.html'
@@ -60,6 +60,11 @@ class rotateProxy:
             # proxy = next(proxy_pool)
             # print("Request #%d"%i)
             # print(url)
+            if not checkInternet():
+                print("Could not connect, trying again in 3 seconds!")
+                time.sleep(3)
+                checkProxy(proxy,url)
+                return
             scraper = cfscrape.create_scraper()
             # requests.packages.urllib3.disable_warnings()
             # response = scraper.get(url,proxies={"http": proxy, "https": proxy},headers={'User-Agent': 'Chrome'}, timeout=5)

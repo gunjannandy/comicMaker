@@ -14,7 +14,7 @@ class saveImage:
 			checkProgress(url,filename)
 		except:
 			# raise
-			print("Could not connect, Trying again!")
+			print("Could not connect, Trying again in 10 seconds!")
 			time.sleep(10)
 			saveImage.mangaLike(url,chapter,pageNum)
 			return
@@ -32,11 +32,11 @@ class saveImage:
 			open(filename, 'wb').write(r.content)
 			checkProgress(url,filename)
 		except:
-			raise
-			# print("Could not connect, Trying again!")
-			# time.sleep(10)
-			# saveImage.readComic(url,chapter,pageNum)
-			# return
+			# raise
+			print("Could not connect, Trying again in 10 seconds!")
+			time.sleep(10)
+			saveImage.readComic(url,chapter,pageNum)
+			return
 		else:
 			imageConverter(filename)
 			print("    "+filename+" saved!")
