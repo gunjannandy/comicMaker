@@ -4,7 +4,8 @@ from .checkInternet import checkInternet
 from .makeFullPdf import makeFullPdf
 from .parseImage import parseImage
 from .mangaLike import mangaLike
-from .readComic import readComic
+from .readComicOnlineTo import readComicOnlineTo
+from .readComicsOnlineRu import readComicsOnlineRu
 from .saveImage import saveImage
 from .rotateProxy import rotateProxy
 from .confirm import confirm

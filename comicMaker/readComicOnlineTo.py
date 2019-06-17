@@ -6,18 +6,18 @@ from .makePdf import makePdf
 import requests,os,os.path,sys,time,json,cfscrape
 from bs4 import BeautifulSoup
 
-def readComic():
+def readComicOnlineTo():
 	while True:
 		try:
 			with open('config.json', 'r', encoding="utf-8") as f:
 				books = json.load(f)
-			library=[*books['readComic']]
+			library=[*books['readComicOnlineTo']]
 			if not library:
 				# print("No books found!")
 				return
 			# print("List of books >")
 			# for i in library:
-			# 	print (" > '"+i+"' download will start from Chapter-"+books['readComic'][i])
+			# 	print (" > '"+i+"' download will start from Chapter-"+books['readComicOnlineTo'][i])
 		except:
 			# raise
 		    # print("No 'config.json' file found!")
@@ -48,7 +48,7 @@ def readComic():
 					print("Could not connect, trying again in 3 seconds!")
 					time.sleep(3)
 					os.chdir(originalWorkingDirectory)
-					readComic()
+					readComicOnlineTo()
 					return
 				
 				scraper = cfscrape.create_scraper()
@@ -69,7 +69,7 @@ def readComic():
 				proxyNumber=(proxyNumber+1)%len(proxyList)
 				continue
 				# os.chdir(originalWorkingDirectory)
-				# readComic()
+				# readComicOnlineTo()
 				# return
 			tryAgain=1 #for breaking the while loop
 		# for i in range(1,100): print(i)
@@ -94,7 +94,7 @@ def readComic():
 			# 	totalChaptersToDownload += 1
 			# 	fullComicFlag = 1
 			try:
-				if float(finalSplit.split("-")[1]) >= float(books['readComic'][comicName]):
+				if float(finalSplit.split("-")[1]) >= float(books['readComicOnlineTo'][comicName]):
 					middleLink.append(middleSplit)
 					chapterNames.append(finalSplit)
 					totalChaptersToDownload += 1
@@ -126,7 +126,7 @@ def readComic():
 				# print(str(i).split("-")[1])
 				# continue
 				try:
-					books['readComic'][comicName] = str(i).split("-")[1]
+					books['readComicOnlineTo'][comicName] = str(i).split("-")[1]
 				except:
 					pass
 				tryAgain=0
@@ -144,16 +144,17 @@ def readComic():
 					print("  "+comicName+" > "+chapter+" already exists.")
 				else:
 					os.makedirs(currentDir)
-				print("  Opening "+comicName+" > "+chapter+" >")
+				print("  Opening "+comicName+" > "+chapter+" > ("+str(totalChaptersToDownload)+" Remaining) >")
 				os.chdir(currentDir)
 				completeUrl=incompleteUrl+middleLink[countForMiddleLink]+"&readType=1&quality=hq"
 				print("   Fooling Cloudflare...")
-				parseImage.readComic(completeUrl,chapter,proxyList,proxyNumber)
-				makePdf.readComic(chapter)
+				parseImage.readComicOnlineTo(completeUrl,chapter,proxyList,proxyNumber)
+				makePdf.readComicOnlineTo(chapter)
 				os.chdir("..")
 				pagesCrawledWithSameProxy+=1
 				countForMiddleLink+=1
-			makeFullPdf.readComic(comicName)
+				totalChaptersToDownload-=1
+			makeFullPdf.readComicOnlineTo(comicName)
 		else:
 			print(" < "+comicName+" already fully downloaded.")
 		os.chdir("..")

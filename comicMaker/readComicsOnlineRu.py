@@ -4,12 +4,12 @@ from .makePdf import makePdf
 import requests,os,os.path,sys,time,json
 from bs4 import BeautifulSoup
 
-def mangaLike():
+def readComicsOnlineRu():
 	while True:
 		try:
 			with open('config.json', 'r', encoding="utf-8") as f:
 				books = json.load(f)
-			library=[*books['mangaLike']]
+			library=[*books['readComicsOnlineRu']]
 			# print(library)
 			# return
 			if not library:
@@ -17,7 +17,7 @@ def mangaLike():
 				return
 			# print("List of books >")
 			# for i in library:
-			# 	print (" > '"+i+"' download will start from Chapter-"+books['mangaLike'][i])
+			# 	print (" > '"+i+"' download will start from Chapter-"+books['readComicsOnlineRu'][i])
 		except:
 			# raise	    
 			# print("No 'config.json' file found!")
@@ -33,7 +33,7 @@ def mangaLike():
 		os.makedirs('comicDownloads'+os.sep)
 	os.chdir('comicDownloads'+os.sep)
 	for comicName in library:
-		incompleteUrl="https://mangalike.net/manga/"+comicName+"/"
+		incompleteUrl="https://readcomicsonline.ru/comic/"+comicName+"/"
 		tryAgain=0
 		while tryAgain==0:
 			try:
@@ -45,19 +45,25 @@ def mangaLike():
 				continue
 				# os.chdir('..')
 				# os.chdir('comicMaker'+os.sep)
-				# mangaLike()
+				# readComicsOnlineRu()
 				# return
 			tryAgain=1
 		chapterNum = []
 		totalChaptersToDownload = 0
-		for li in soup.findAll('li', attrs={'class':'wp-manga-chapter'}):
-			string=li.find('a').contents[0]
-			list_of_words = string.split( )
-			validChapterNum = list_of_words[list_of_words.index("Chapter") + 1]
-			if float(validChapterNum) >= float(books['mangaLike'][comicName]):
+
+		for li in soup.findAll('li', attrs={'class':'volume-0'}):
+			# validChapterNum=li.find('a').contents[0].split("#")[1]
+			validChapterNum=li.find('a')['href'].split(comicName+"/")[1]
+			try:
+				if float(validChapterNum) >= float(books['readComicsOnlineRu'][comicName]):
+					chapterNum.append(validChapterNum)
+					totalChaptersToDownload += 1
+			except:
 				chapterNum.append(validChapterNum)
 				totalChaptersToDownload += 1
 		chapterNum.reverse()
+		# print(chapterNum)
+		# return
 		parentDir=comicName+os.sep
 		if os.path.exists(parentDir):
 			print(comicName+" already exists.")
@@ -67,7 +73,7 @@ def mangaLike():
 		os.chdir(parentDir)
 		if totalChaptersToDownload > 1 :
 			for i in chapterNum:
-				books['mangaLike'][comicName] = str(i)
+				books['readComicsOnlineRu'][comicName] = str(i)
 				tryAgain=0
 				while tryAgain==0:
 					try:
@@ -76,20 +82,20 @@ def mangaLike():
 					except:
 						continue
 					tryAgain=1
-				chapter="Chapter-"+i.replace('.','-')
-				currentDir=chapter+os.sep
+				chapter=i
+				currentDir=chapter.replace('.','-')+os.sep
 				if os.path.exists(currentDir):
-					print("  "+comicName+" > "+chapter+" already exists.")
+					print("  "+comicName+" > "+chapter.replace('.','-')+" already exists.")
 				else:
 					os.makedirs(currentDir)
 				print("  Opening "+comicName+" > "+chapter+" > ("+str(totalChaptersToDownload)+" Remaining) >")
 				os.chdir(currentDir)
-				completeUrl=incompleteUrl+"chapter-"+i.replace('.','-')+"/"
-				parseImage.mangaLike(completeUrl,chapter)
-				makePdf.mangaLike(chapter)
+				completeUrl=incompleteUrl+i+"/"
+				parseImage.readComicsOnlineRu(comicName,completeUrl,chapter)
+				makePdf.readComicsOnlineRu(chapter)
 				os.chdir("..")
-				totalChaptersToDownload-=1
-			makeFullPdf.mangaLike(comicName)
+				totalChaptersToDownload -= 1
+			makeFullPdf.readComicsOnlineRu(comicName)
 		else:
 			print(" < "+comicName+" already fully downloaded.")
 		os.chdir("..")

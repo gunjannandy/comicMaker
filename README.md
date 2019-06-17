@@ -180,7 +180,7 @@ python comicMaker.py
 - Progressbar added for getting realtime downloading status.
 - This will also create pdf for each chapters.
 - This will merge all chapter pdfs into a single one as a full book after completing downloading each book.
-- Added proxy support from [FreeProxyList](https://free-proxy-list.net/anonymous-proxy.html) for anonymous downloading and to avoid getting banned.
+- Added proxy support from [Free Proxy List](https://free-proxy-list.net/anonymous-proxy.html) for anonymous downloading and to avoid getting banned.
 - Used multithreading for parallel downloading.
 
 ### Save Location
@@ -225,7 +225,7 @@ Comics will be saved on the same directory you clone this repository. Here is ho
 ### Short term 
 
 - Download only selected chapters from each book (`config.json` file should take that data)
-- Right now it can only download books from [MangaLike](http://mangalike.net/) which are divided only in chapters, not volumes. It should also be able to download if the book contains "Volumes".
+- Right now it can only download books from [Manga Like](http://mangalike.net/) which are divided only in chapters, not volumes. It should also be able to download if the book contains "Volumes".
 
 ### Long term
 
@@ -239,14 +239,16 @@ Comics will be saved on the same directory you clone this repository. Here is ho
 
 ## Changelog
 
-- [Added]  New website [ReadComicOnline](https://readcomiconline.to/)
-- [Added]  Proxy support from [FreeProxyList](https://free-proxy-list.net/anonymous-proxy.html) for mass downloading without getting banned.
+- [Added]  New website [Read Comics Online](https://readcomicsonline.ru/)
+- [Added]  Proxy support from [Free Proxy List](https://free-proxy-list.net/anonymous-proxy.html) for mass downloading without getting banned.
+- [Added]  New website [Read Comic Online](https://readcomiconline.to/)
 - [Added]  Optimize downloading process for taking less resources.
 - [Fixed]  (Non-Problamatic) The pdf merging continues, even if the book is completely downloaded.
 - [Fixed]  (Problamatic) Image to pdf fails if images are not downloaded completely.
 - [Fixed]  (Problamatic) Can't convert RGBA images in pdf.
 - [Fixed]  (Problamatic) If connection fails, the total downloading fails.
 - [Fixed]  (Problamatic) Pdfs are merged out of order.
+- [Added]  New website [Manga Like](https://mangalike.net/)
 
 ## Opening An Issue/Requesting A Site
 

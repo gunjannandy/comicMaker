@@ -1,47 +1,58 @@
 {
     "mangaLike": {
-        "white-angels-have-no-wings": "66"
+        "chromosome-47": "82"
     },
-    "readComic": {
-        "Witchblade-2017": "14"
+    "readComicOnlineTo": {},
+    "readComicsOnlineRu": {
+        "avengers-2016": "691"
     },
     "temporary storage of books that are not going to be downloaded by the program": {
-        "what-does-the-fox-say": "95",
-        "lily": "243",
-        "tamen-de-gushi": "187",
-        "otome-no-teikoku": "108.5",
-        "sirens-lament": "153",
-        "serenade-keum-kyesoo": "75",
-        "sun-ken-rock": "171",
-        "haomen-tianjia-qianqi": "398",
-        "lily-love": "34",
-        "girl-and-science": "53",
-        "citrus-saburo-uta": "41.5",
-        "star-martial-god-technique": "254",
-        "the-love-doctor": "88",
-        "the-lost-city": "82",
-        "chong-sheng-resurrection": "186",
-        "apothesis": "173",
-        "two-lives-in-the-same-house": "24",
-        "the-third-party": "50",
-        "chromosome-47": "82",
-        "pulse": "67.5",
-        "addictive": "13",
-        "exciting-feelings": "68.5",
-        "Batman-The-Complete-Hush": "1",
-        "X-23-2018": "12",
-        "Ms-Marvel-2006": "50",
-        "Civil-War-2006": "7",
-        "All-Star-Superman": "12",
-        "Injustice-2": "72",
-        "Batman-The-Dark-Knight-Returns": "4",
-        "Phoenix-Resurrection-The-Return-of-Jean-Grey": "5",
-        "Batwoman-2017": "18",
-        "The-Unstoppable-Wasp-2018": "8",
-        "Jessica-Jones-2018": "3",
-        "X-Men-Origins-Jean-Grey": "1",
-        "Guardians-of-the-Galaxy-All-New-X-Men-The-Trial-of-Jean-Grey": "1",
-        "Jean-Grey": "11",
-        "Generations-Phoenix-Jean-Grey": "1"
+        "mangalike": {
+            "white-angels-have-no-wings": "66",
+            "what-does-the-fox-say": "95",
+            "lily": "243",
+            "tamen-de-gushi": "187",
+            "otome-no-teikoku": "108.5",
+            "sirens-lament": "153",
+            "serenade-keum-kyesoo": "75",
+            "sun-ken-rock": "171",
+            "haomen-tianjia-qianqi": "398",
+            "lily-love": "34",
+            "girl-and-science": "53",
+            "star-martial-god-technique": "254",
+            "the-love-doctor": "88",
+            "the-lost-city": "82",
+            "chong-sheng-resurrection": "186",
+            "apothesis": "173",
+            "two-lives-in-the-same-house": "24",
+            "the-third-party": "50",
+            "citrus-saburo-uta": "41.5",
+            "pulse": "67.5",
+            "addictive": "13",
+            "exciting-feelings": "68.5"
+        },
+        "readComicOnlineTo": {
+            "Batman-The-Complete-Hush": "1",
+            "X-23-2018": "12",
+            "Ms-Marvel-2006": "50",
+            "Civil-War-2006": "7",
+            "All-Star-Superman": "12",
+            "Injustice-2": "72",
+            "Batman-The-Dark-Knight-Returns": "4",
+            "Phoenix-Resurrection-The-Return-of-Jean-Grey": "5",
+            "Batwoman-2017": "18",
+            "The-Unstoppable-Wasp-2018": "8",
+            "Jessica-Jones-2018": "3",
+            "X-Men-Origins-Jean-Grey": "1",
+            "Guardians-of-the-Galaxy-All-New-X-Men-The-Trial-of-Jean-Grey": "1",
+            "Jean-Grey": "11",
+            "Generations-Phoenix-Jean-Grey": "1",
+            "Witchblade-2017": "14"
+        },
+        "readComicsOnlineRu": {
+            "batman-2016": "66",
+            "injustice-2-2017": "1",
+            "justice-league-2016": "1"
+        }
     }
 }

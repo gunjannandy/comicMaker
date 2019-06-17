@@ -8,6 +8,8 @@ class job:
 	 		pageNum = img['id'].replace('ima','pa')
 	 		saveImage.mangaLike(link,chapter,pageNum)
 
-	def readComic(url,chapter,pageNum):
- 		# pageNum = (url.split("/RCO")[1]).split(".jpg")[0]
- 		saveImage.readComic(url,chapter,pageNum)
+	def readComicOnlineTo(url,chapter,pageNum):
+ 		saveImage.readComicOnlineTo(url,chapter,pageNum)
+
+	def readComicsOnlineRu(url,chapter,pageNum):
+		saveImage.readComicsOnlineRu(url,chapter,pageNum)
