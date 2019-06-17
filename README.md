@@ -1,9 +1,8 @@
-<p align="center">
-  <img src="docs/logo.png"> 
-</p>
 
 
-# comicMaker   |   [![Build Status](https://travis-ci.com/Gunjan933/comicMaker.svg?branch=master)](https://travis-ci.com/Gunjan933/comicMaker)  |   [![Known Vulnerabilities](https://img.shields.io/badge/vulnerabilities%20-0-brightgreen.svg?style=flat))](https://snyk.io//test/github/Gunjan933/comicMaker?targetFile=requirements.txt) | [![start with why](https://img.shields.io/badge/docs%20-passing-brightgreen.svg?style=flat)](https://github.com/Gunjan933/comicMaker/edit/master/README.md) | [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Gunjan933/comicMaker/graphs/contributors) 
+<img align="left" width="80" src="docs/logo.png" alt="comicMaker project app icon">
+
+# comicMaker   |   [![Build Status](https://travis-ci.com/Gunjan933/comicMaker.svg?branch=master)](https://travis-ci.com/Gunjan933/comicMaker)  |   [![Known Vulnerabilities](https://img.shields.io/badge/vulnerabilities%20-0-brightgreen.svg?style=flat)](https://snyk.io//test/github/Gunjan933/comicMaker?targetFile=requirements.txt) | [![start with why](https://img.shields.io/badge/docs%20-passing-brightgreen.svg?style=flat)](https://github.com/Gunjan933/comicMaker/edit/master/README.md) | [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Gunjan933/comicMaker/graphs/contributors) 
 
 comicMaker is a command line tool to download Comics and Manga from various Manga and Comic sites easily. This is for educational purpose only.
 
