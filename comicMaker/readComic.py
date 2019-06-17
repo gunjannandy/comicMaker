@@ -66,6 +66,7 @@ def readComic():
 			except:
 				# raise
 				print("     Proxy went down..trying again...")
+				proxyNumber=(proxyNumber+1)%len(proxyList)
 				continue
 				# os.chdir(originalWorkingDirectory)
 				# readComic()
