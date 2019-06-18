@@ -6,10 +6,13 @@ class job:
 		for img in url:
 	 		link = img['src']
 	 		pageNum = img['id'].replace('ima','pa')
-	 		saveImage.mangaLike(link,chapter,pageNum)
+	 		saveImage(link,chapter,pageNum)
 
 	def readComicOnlineTo(url,chapter,pageNum):
- 		saveImage.readComicOnlineTo(url,chapter,pageNum)
+ 		saveImage(url,chapter,pageNum)
 
 	def readComicsOnlineRu(url,chapter,pageNum):
-		saveImage.readComicsOnlineRu(url,chapter,pageNum)
+		saveImage(url,chapter,pageNum)
+
+	def comicExtra(url,chapter,pageNum):
+		saveImage(url,chapter,pageNum)

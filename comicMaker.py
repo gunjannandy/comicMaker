@@ -10,7 +10,8 @@ def main():
 		mangaLikeLibrary=[*books['mangaLike']]
 		readComicOnlineToLibrary=[*books['readComicOnlineTo']]
 		readComicsOnlineRuLibrary=[*books['readComicsOnlineRu']]
-		if not mangaLikeLibrary and not readComicOnlineToLibrary and not readComicsOnlineRuLibrary:
+		comicExtraLibrary=[*books['comicExtra']]
+		if not mangaLikeLibrary and not readComicOnlineToLibrary and not readComicsOnlineRuLibrary and not comicExtraLibrary :
 			print("No books found!")
 			return
 		print("List of books >")
@@ -23,6 +24,10 @@ def main():
 		if readComicsOnlineRuLibrary:
 			for i in readComicsOnlineRuLibrary:
 				print (" > '"+i+"' download will start from Chapter-"+books['readComicsOnlineRu'][i])
+		if comicExtraLibrary:
+			for i in comicExtraLibrary:
+				print (" > '"+i+"' download will start from Chapter-"+books['comicExtra'][i])
+
 	except:
 		# raise
 	    print("No 'config.json' file found!")
@@ -36,6 +41,8 @@ def main():
 	comicMaker.mangaLike()
 	comicMaker.readComicOnlineTo()
 	comicMaker.readComicsOnlineRu()
+	comicMaker.readComicsOnlineRu()
+	comicMaker.comicExtra()
 	print(" <<< All Downloads completed!")
 	# return
 

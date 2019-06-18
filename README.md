@@ -64,6 +64,7 @@ URL can be any URL of the [supported websites](https://github.com/Gunjan933/comi
 |-----------------------------	|----------------	|
 | https://readcomiconline.to  	| 100%           	|
 | https://readcomicsonline.ru 	| 100%           	|
+| https://www.comicextra.com/ 	| 100%           	|
 | https://mangalike.net       	| 90%            	|
 
 
@@ -91,6 +92,9 @@ Find the file `config.json`. Inside there you can enter names of any books you w
     },
     "readComicsOnlineRu": {
     
+    },
+    "comicExtra": {
+
     },
     "temporary library": {
         "tamen-de-gushi": "187",
@@ -263,6 +267,7 @@ Comics will be saved on the same directory you clone this repository. Here is ho
 
 ## Changelog
 
+- [Added]  New website [Comic Extra](https://www.comicextra.com/)
 - [Added]  New website [Read Comics Online](https://readcomicsonline.ru/)
 - [Added]  Proxy support from [Free Proxy List](https://free-proxy-list.net/anonymous-proxy.html) for mass downloading without getting banned.
 - [Added]  New website [Read Comic Online](https://readcomiconline.to/)

@@ -6,6 +6,7 @@ from .parseImage import parseImage
 from .mangaLike import mangaLike
 from .readComicOnlineTo import readComicOnlineTo
 from .readComicsOnlineRu import readComicsOnlineRu
+from .comicExtra import comicExtra
 from .saveImage import saveImage
 from .rotateProxy import rotateProxy
 from .confirm import confirm
