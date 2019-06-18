@@ -117,3 +117,53 @@ class parseImage:
 			print("  Starting burst engine...")
 			with Pool(processes=linkCount) as pool:
 				pool.starmap(job.readComicsOnlineRu, zip(links, itertools.repeat(chapter),pageNum))
+	
+	def comicExtra(url,chapter):
+		try:
+			page_response = requests.get(url, timeout=10)
+			soup = BeautifulSoup(page_response.content, "html.parser")
+		except:
+			print("Could not connect, trying again in 5 seconds!")
+			time.sleep(5)
+			parseImage.mangaLike(url,chapter)
+			return
+		else:
+			# data = soup.findAll('div',attrs={'class':"chapter-container"})
+			# print(data)
+			links=[]
+			pageNum=[]
+			# print(data)
+			# for img in data:
+				# print((img.findAll('img').split()))
+
+			images = soup.findAll('img')
+			for image in images:
+				#print image source
+				imageLink=image['src']
+				if not "comicextra" in imageLink:
+					# print(imageLink)
+					links.append(imageLink)
+				#print alternate text
+				# print image['alt']
+			# for div in data:
+			# 	links.append(div.findAll('img'))
+			# # linkCount = 2*mp.cpu_count() - 1
+			# print(links)
+			# return
+
+			linkCount=0
+			for i in links:
+				linkCount+=1
+			for i in range (1,linkCount+1):
+				pageNum.append("%03d"%i)
+			if linkCount > 90:
+				linkCount = 90
+			elif linkCount < 2*mp.cpu_count():
+				linkCount = 2*mp.cpu_count()
+			print("  Starting burst engine...")
+			with Pool(processes=linkCount) as pool:
+				pool.starmap(job.comicExtra, zip(links, itertools.repeat(chapter),pageNum))
+
+# chapter="Chapter-1"
+# url="https://www.comicextra.com/spider-man-2016/chapter-1/full/"
+# parseImage.comicExtra(url,chapter)

@@ -107,7 +107,7 @@ def readComicOnlineTo():
 		# return
 		chapterNames.reverse()
 		middleLink.reverse()
-		parentDir=comicName+"/"
+		parentDir=comicName+os.sep
 		if os.path.exists(parentDir):
 			print(comicName+" already exists.")
 		else:
@@ -139,7 +139,7 @@ def readComicOnlineTo():
 					tryAgain=1
 				# chapter="Chapter-"+i.replace('.','-')
 				chapter = str(i)
-				currentDir=chapter+"/"
+				currentDir=chapter+os.sep
 				if os.path.exists(currentDir):
 					print("  "+comicName+" > "+chapter+" already exists.")
 				else:

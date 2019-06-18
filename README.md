@@ -2,7 +2,10 @@
 
 <img align="left" width="80" src="docs/logo.png" alt="comicMaker project app icon">
 
-# comicMaker   |   [![Build Status](https://travis-ci.com/Gunjan933/comicMaker.svg?branch=master)](https://travis-ci.com/Gunjan933/comicMaker)    [![Known Vulnerabilities](https://img.shields.io/badge/vulnerabilities%20-0-brightgreen.svg?style=flat)](https://snyk.io//test/github/Gunjan933/comicMaker?targetFile=requirements.txt) [![start with why](https://img.shields.io/badge/docs%20-passing-brightgreen.svg?style=flat)](https://github.com/Gunjan933/comicMaker/edit/master/README.md)  [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Gunjan933/comicMaker/graphs/contributors) [![python >=3.5](https://img.shields.io/badge/pyhton->=3.5-blue.svg?style=flat)](#python-support) [![Join the chat at https://gitter.im/Gunjan933-comicMaker/community](https://badges.gitter.im/Gunjan933-comicMaker/community.svg)](https://gitter.im/Gunjan933-comicMaker/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 
+
+# comicMaker  
+[![Build Status](https://travis-ci.com/Gunjan933/comicMaker.svg?branch=master)](https://travis-ci.com/Gunjan933/comicMaker) [![Known Vulnerabilities](https://img.shields.io/badge/vulnerabilities%20-0-brightgreen.svg?style=flat)](https://snyk.io//test/github/Gunjan933/comicMaker?targetFile=requirements.txt) [![docs passing](https://img.shields.io/badge/docs%20-passing-brightgreen.svg?style=flat)](https://github.com/Gunjan933/comicMaker/edit/master/README.md)  [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Gunjan933/comicMaker/graphs/contributors) [![python >=3.5](https://img.shields.io/badge/pyhton->=3.5-blue.svg?style=flat)](#python-support) [![Gitter](https://badges.gitter.im/Gunjan933-comicMaker/community.svg)](https://gitter.im/Gunjan933-comicMaker/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 
 comicMaker is a command line tool which downloads Comics and Manga from various Manga and Comic sites and converts them into (lossless) pdf easily. This is for educational purpose only.
 
@@ -63,6 +66,7 @@ URL can be any URL of the [supported websites](https://github.com/Gunjan933/comi
 |-----------------------------	|----------------	|
 | https://readcomiconline.to  	| 100%           	|
 | https://readcomicsonline.ru 	| 100%           	|
+| https://www.comicextra.com 	| 100%           	|
 | https://mangalike.net       	| 90%            	|
 
 
@@ -90,6 +94,9 @@ Find the file `config.json`. Inside there you can enter names of any books you w
     },
     "readComicsOnlineRu": {
     
+    },
+    "comicExtra": {
+
     },
     "temporary library": {
         "tamen-de-gushi": "187",
@@ -262,6 +269,7 @@ Comics will be saved on the same directory you clone this repository. Here is ho
 
 ## Changelog
 
+- [Added]  New website [Comic Extra](https://www.comicextra.com/)
 - [Added]  New website [Read Comics Online](https://readcomicsonline.ru/)
 - [Added]  Proxy support from [Free Proxy List](https://free-proxy-list.net/anonymous-proxy.html) for mass downloading without getting banned.
 - [Added]  New website [Read Comic Online](https://readcomiconline.to/)

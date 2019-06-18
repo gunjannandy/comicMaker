@@ -1,13 +1,13 @@
 {
-    "mangaLike": {
-        "chromosome-47": "82"
-    },
+    "mangaLike": {},
     "readComicOnlineTo": {},
-    "readComicsOnlineRu": {
-        "avengers-2016": "691"
+    "readComicsOnlineRu": {},
+    "comicExtra": {
+        "spider-man-2016": "239"
     },
     "temporary storage of books that are not going to be downloaded by the program": {
         "mangalike": {
+            "chromosome-47": "82",
             "white-angels-have-no-wings": "66",
             "what-does-the-fox-say": "95",
             "lily": "243",
@@ -50,9 +50,13 @@
             "Witchblade-2017": "14"
         },
         "readComicsOnlineRu": {
+            "avengers-2016": "691",
             "batman-2016": "66",
             "injustice-2-2017": "1",
             "justice-league-2016": "1"
+        },
+        "comicExtra": {
+            "injustice-ground-zero": "1"
         }
     }
 }
