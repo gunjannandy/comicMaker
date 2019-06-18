@@ -132,6 +132,15 @@ If you're on Fedora, CentOS/RHEL, openSUSE, Arch Linux, then you simply need to 
 
 If this still doesn't work, then you'll manually need to install pip. Doing so is an easy one time job and you can follow   [`THIS TUTORIAL`](https://pip.pypa.io/en/stable/installing/) to do so.
 
+* Download this [`requirements.text`](https://github.com/Gunjan933/comicMaker/blob/master/requirements.txt) file and put it in some directory/folder.
+* Open terminal again and browse to the directory where you downloaded your requiremenets.txt file and run this command :
+```
+pip install -r requirements.txt
+```
+* It should install the required external libraries.
+
+
+
 ### Windows :
 If you're on windows, then follow these steps :
 
