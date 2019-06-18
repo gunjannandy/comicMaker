@@ -2,9 +2,9 @@
 
 <img align="left" width="80" src="docs/logo.png" alt="comicMaker project app icon">
 
-# comicMaker   |   [![Build Status](https://travis-ci.com/Gunjan933/comicMaker.svg?branch=master)](https://travis-ci.com/Gunjan933/comicMaker)  |   [![Known Vulnerabilities](https://img.shields.io/badge/vulnerabilities%20-0-brightgreen.svg?style=flat)](https://snyk.io//test/github/Gunjan933/comicMaker?targetFile=requirements.txt) | [![start with why](https://img.shields.io/badge/docs%20-passing-brightgreen.svg?style=flat)](https://github.com/Gunjan933/comicMaker/edit/master/README.md) | [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Gunjan933/comicMaker/graphs/contributors) 
+# comicMaker   |   [![Build Status](https://travis-ci.com/Gunjan933/comicMaker.svg?branch=master)](https://travis-ci.com/Gunjan933/comicMaker)    [![Known Vulnerabilities](https://img.shields.io/badge/vulnerabilities%20-0-brightgreen.svg?style=flat)](https://snyk.io//test/github/Gunjan933/comicMaker?targetFile=requirements.txt) [![start with why](https://img.shields.io/badge/docs%20-passing-brightgreen.svg?style=flat)](https://github.com/Gunjan933/comicMaker/edit/master/README.md)  [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Gunjan933/comicMaker/graphs/contributors) [![python >=3.5](https://img.shields.io/badge/pyhton->=3.5-blue.svg?style=flat)](https://github.com/Gunjan933/comicMaker/graphs/contributors) 
 
-comicMaker is a command line tool which downloads Comics and Manga from various Manga and Comic sites and converts them into (lossless)pdf easily. This is for educational purpose only.
+comicMaker is a command line tool which downloads Comics and Manga from various Manga and Comic sites and converts them into (lossless) pdf easily. This is for educational purpose only.
 
 > Don't overuse this script. It puts loads on their servers.  
 > Support the developers of those websites by disabling your adblock on their site.   
@@ -120,7 +120,7 @@ This script can run on multiple Operating Systems. You need `Node.js` in your sy
 Download the `Node.Js` from [Node.js official website](https://nodejs.org/en/). Doesn't matter which operating system you're on, this is a must. Follow the instructions mentioned below, according to your OS.
 
 ### Linux/Debian :
-Since most (if not all) Linux/Debian OS come with python pre-installed, you don't have to install python manually. Make sure you're using python >= 3.x though.
+Since most (if not all) Linux/Debian OS come with python pre-installed, you don't have to install python manually. Make sure you're using python >= 3.5 though.
 
 We need `pip` to install any external dependenc(ies). So, open any terminal and type in `pip list` and if it shows some data, then it is fine. But, if it shows error, like `pip not found` or something along this line, then you need to install `pip`. Just type this command in terminal :
 
@@ -144,7 +144,7 @@ pip install -r requirements.txt
 ### Windows :
 If you're on windows, then follow these steps :
 
-* Install Python > 3.x. Download the desired installer from [download Python](https://www.python.org/downloads/).
+* Install Python >= 3.5. Download the desired installer from [download Python](https://www.python.org/downloads/).
 * [Add it in the system path](http://superuser.com/questions/143119/how-to-add-python-to-the-windows-path) (if not already added).
 * Download this [`requirements.text`](https://github.com/Gunjan933/comicMaker/blob/master/requirements.txt) file and put it in some directory/folder.
 * Open Command Prompt and browse to the directory where you downloaded your requiremenets.txt file and run this command :
@@ -167,8 +167,7 @@ After downloading and installing these, you need to add PIP & Python in your pat
 
 ## Python Support
 
-Supports python 3.x.  
-(Have to check if python 2.x is supported or not)  
+Supports python >= 3.5    
 
 ## Usage
 
