@@ -54,6 +54,10 @@ step 2: Then enter following commands:
 * [License](#license)
 
 
+<p align="center">
+  <img src="docs/bookStore.jpg"> 
+</p>
+
 ## Getting Started
 
 ### Supported Sites
