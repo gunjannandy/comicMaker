@@ -4,6 +4,10 @@ import comicMaker,sys,json
 sys.setrecursionlimit(25000)
 
 def main():
+	# printing comicMaker logo
+	with open('asciiLogo.txt') as f:
+		asciiLogo=f.read()
+		print(asciiLogo)
 	try:
 		with open('config.json', 'r', encoding="utf-8") as f:
 			books = json.load(f)
@@ -12,9 +16,9 @@ def main():
 		readComicsOnlineRuLibrary=[*books['readComicsOnlineRu']]
 		comicExtraLibrary=[*books['comicExtra']]
 		if not mangaLikeLibrary and not readComicOnlineToLibrary and not readComicsOnlineRuLibrary and not comicExtraLibrary :
-			print("No books found!")
+			print("\nNo books found!\n")
 			return
-		print("List of books >")
+		print("\nList of books >")
 		if mangaLikeLibrary:
 			for i in mangaLikeLibrary:
 				print (" > '"+i+"' download will start from Chapter-"+books['mangaLike'][i])
@@ -29,21 +33,13 @@ def main():
 				print (" > '"+i+"' download will start from Chapter-"+books['comicExtra'][i])
 
 	except:
-		# raise
-	    print("No 'config.json' file found!")
-	    return
-	
-	# if not comicMaker.confirm():
-		# return
-
-	# Process(target = comicMaker.mangaLike).start()
-	# Process(target = comicMaker.readComicOnlineTo).start()
+		raise
 	comicMaker.mangaLike()
 	comicMaker.readComicOnlineTo()
 	comicMaker.readComicsOnlineRu()
 	comicMaker.readComicsOnlineRu()
 	comicMaker.comicExtra()
-	print(" <<< All Downloads completed!")
+	print(" <<< All Downloads completed!\n")
 	# return
 
 
