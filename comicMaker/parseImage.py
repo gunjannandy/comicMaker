@@ -2,7 +2,6 @@ import os,requests,itertools,cfscrape,time
 from bs4 import BeautifulSoup
 import multiprocessing as mp
 from multiprocessing.dummy import Pool
-from .job import job
 from .saveImage import saveImage
 from .checkInternet import checkInternet
 from .rotateProxy import rotateProxy
@@ -21,19 +20,28 @@ class parseImage:
 		else:
 			data = soup.findAll('div',attrs={'class':"page-break"})
 			links=[]
+			pageNum=[]
 			for div in data:
-				links.append(div.findAll('img'))
+				for img in div.findAll('img'):
+					# print(img['data-src'].strip())
+					links.append(img['data-src'].strip())
+					# links.append(img)
 			# linkCount = 2*mp.cpu_count() - 1
+			
 			linkCount=0
+			# print(links)
+			# return
 			for i in links:
 				linkCount+=1
+			for i in range (1,linkCount+1):
+				pageNum.append("%03d"%i)
 			if linkCount > 90:
 				linkCount = 90
 			elif linkCount < 2*mp.cpu_count():
 				linkCount = 2*mp.cpu_count()
 			print("  Starting burst engine...")
 			with Pool(processes=linkCount) as pool:
-				pool.starmap(job.mangaLike, zip(links, itertools.repeat(chapter)))
+				pool.starmap(saveImage, zip(links, itertools.repeat(chapter), pageNum))
 
 	def readComicOnlineTo(url,chapter,proxyList,proxyNumber):
 		try:
@@ -78,7 +86,7 @@ class parseImage:
 				linkCount = 2*mp.cpu_count()
 			print("  Starting burst engine...")
 			with Pool(processes=linkCount) as pool:
-				pool.starmap(job.readComicOnlineTo, zip(links, itertools.repeat(chapter), pageNum))
+				pool.starmap(saveImage, zip(links, itertools.repeat(chapter), pageNum))
 
 	def readComicsOnlineRu(comicName,url,chapter):
 		try:
@@ -116,7 +124,7 @@ class parseImage:
 				linkCount = 2*mp.cpu_count()
 			print("  Starting burst engine...")
 			with Pool(processes=linkCount) as pool:
-				pool.starmap(job.readComicsOnlineRu, zip(links, itertools.repeat(chapter),pageNum))
+				pool.starmap(saveImage, zip(links, itertools.repeat(chapter),pageNum))
 	
 	def comicExtra(url,chapter):
 		try:
@@ -162,7 +170,7 @@ class parseImage:
 				linkCount = 2*mp.cpu_count()
 			print("  Starting burst engine...")
 			with Pool(processes=linkCount) as pool:
-				pool.starmap(job.comicExtra, zip(links, itertools.repeat(chapter),pageNum))
+				pool.starmap(saveImage, zip(links, itertools.repeat(chapter),pageNum))
 
 # chapter="Chapter-1"
 # url="https://www.comicextra.com/spider-man-2016/chapter-1/full/"

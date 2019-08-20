@@ -61,7 +61,7 @@ class rotateProxy:
             # print("Request #%d"%i)
             # print(url)
             if not checkInternet():
-                print("Could not connect, trying again in 3 seconds!")
+                print("Could not connect, trying again in 3 seconds!                   ")
                 time.sleep(3)
                 checkProxy(proxy,url)
                 return
@@ -75,7 +75,7 @@ class rotateProxy:
         except:
             # print(proxy+" Failed.")
             # proxies.remove(proxy)
-            stdout.write("%s\r"%proxy)
+            stdout.write("%s                                 \r"%proxy)
             stdout.flush()
             # time.sleep(.1)
             # print("Bad Proxy", sep=' ', end='', flush=True)

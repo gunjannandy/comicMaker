@@ -11,4 +11,3 @@ from .saveImage import saveImage
 from .rotateProxy import rotateProxy
 from .confirm import confirm
 from .makePdf import makePdf
-from .job import job
