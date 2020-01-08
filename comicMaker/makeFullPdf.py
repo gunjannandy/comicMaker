@@ -66,8 +66,11 @@ class makeFullPdf:
 			sortedpdf=[]
 			sortedlist=[]
 			for i in pdflist:
-				temp=float((i[i.find("Issue-")+6 : i.find(".pdf")]).replace('-','.'))
-				sortedlist.append(temp)
+				try:
+					temp=float((i[i.find("Issue-")+6 : i.find(".pdf")]).replace('-','.'))
+					sortedlist.append(temp)
+				except:
+					pass
 			sortedlist.sort()
 			for i in sortedlist:
 			    sortedpdf.append("Issue"+"-"+((str(i)).replace('.','-')).replace('-0','')+".pdf")
@@ -115,8 +118,11 @@ class makeFullPdf:
 				# print(i[: i.find(".pdf")])
 				# temp=((i[: i.find(".pdf")]))
 				# print(temp.replace('_','.'))
-				temp=float((i[: i.find(".pdf")]).replace('-','.'))
-				sortedlist.append(temp)
+				try:
+					temp=float((i[: i.find(".pdf")]).replace('-','.'))
+					sortedlist.append(temp)
+				except:
+					pass
 			# return
 			sortedlist.sort()
 			# print(sortedlist)
@@ -171,8 +177,11 @@ class makeFullPdf:
 				# print(i[: i.find(".pdf")])
 				# temp=((i[: i.find(".pdf")]))
 				# print(temp.replace('_','.'))
-				temp=float((i[i.find("Chapter-")+8: i.find(".pdf")]).replace('-','.'))
-				sortedlist.append(temp)
+				try:
+					temp=float((i[i.find("Chapter-")+8: i.find(".pdf")]).replace('-','.'))
+					sortedlist.append(temp)
+				except:
+					pass
 			# return
 			sortedlist.sort()
 			# print(sortedlist)
